@@ -59,7 +59,7 @@ else
         # 执行 SQL 文件
         echo -e "${YELLOW}→ 导入数据库结构...${NC}"
         if [ -f "/var/www/html/docker-compose/docker-install.sql" ]; then
-            mysql --skip-ssl -h "$DB_HOST" -P "$DB_PORT" -u "$DB_USER" --password="$DB_PASSWORD" "$DB_NAME" < /var/www/html/docker-compose/docker-install.sql 2>&1
+            mysql --skip-ssl --default-character-set=utf8 -h "$DB_HOST" -P "$DB_PORT" -u "$DB_USER" --password="$DB_PASSWORD" "$DB_NAME" < /var/www/html/docker-compose/docker-install.sql 2>&1
             echo -e "${GREEN}✓ SQL 导入完成${NC}"
         else
             echo -e "${RED}✗ 未找到 docker-compose/docker-install.sql${NC}"
