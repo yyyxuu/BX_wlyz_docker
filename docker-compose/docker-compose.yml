@@ -1,0 +1,21 @@
+services:
+  bx_wlyz:
+    container_name: bx_wlyz
+    image: bx_wlyz:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    volumes:
+      - ./logs:/var/log/apache2
+    networks:
+      - default_network
+
+networks:
+  default_network:
+    driver: bridge
+    external: true

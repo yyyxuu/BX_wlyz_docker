@@ -7,17 +7,17 @@ return [
 
 	'db'                   => [
 	    // 服务器地址
-		'host'      => 'localhost',
+		'host'      => getenv('DB_HOST') ?: 'localhost',
 		// 服务器端口
-		'port'      => '3306',
+		'port'      => getenv('DB_PORT') ?: '3306',
 		// 用户
-		'user'      => '',
+		'user'      => getenv('DB_USER') ?: '',
 		// 密码
-		'pw'        => '',
+		'pw'        => getenv('DB_PASSWORD') ?: '',
 		// 数据库
-		'name'      => '',
+		'name'      => getenv('DB_NAME') ?: '',
 		// 表名前缀
-		'tablepre'  => 'bx_',
+		'tablepre'  => getenv('DB_PREFIX') ?: 'bx_',
 	],
 	
 	// +----------------------------------------------------------------------
@@ -25,11 +25,11 @@ return [
     // +----------------------------------------------------------------------
     
     // 调试模式
-    'debug'                  => false,
+    'debug'                  => getenv('APP_DEBUG') === 'true' ?: false,
     // 默认时区
-    'default_timezone'       => 'PRC',
+    'default_timezone'       => getenv('APP_TIMEZONE') ?: 'PRC',
     // 程序key
-    'key'                    => 'unlock',
+    'key'                    => getenv('APP_KEY') ?: 'unlock',
     
 	// +----------------------------------------------------------------------
     // | 模块设置

@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Documentation
+README.md
+AGENTS.md
+*.md
+DOCKER.md
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# 注意：.env 文件会被包含在镜像中用于配置
+# 但在生产环境中请使用 docker secrets 或挂载方式
